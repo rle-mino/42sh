@@ -6,7 +6,7 @@
 /*   By: rle-mino <rle-mino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 21:14:55 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/06/19 23:03:29 by ishafie          ###   ########.fr       */
+/*   Updated: 2016/06/20 12:22:18 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ int				loop_redir(char *str, int save_fd)
 		i = get_next_redir(str, i);
 		if (match("[0-9][<>]&-*", str + i) || match("[<>]&-*", str + i))
 			close_redir(str + i);
-		else if ((str[i] == '>' || str[i + 1] == '>') &&
+		else if ((str[i] == '>' || (str[i] && str[i + 1] == '>')) &&
 										(err = word_before_redir(str, i)))
 			err = detect_redir_out(str + i);
-		else if ((str[i] == '<' || str[i + 1] == '<') &&
+		else if ((str[i] == '<' || (str[i] && str[i + 1] == '<')) &&
 											(err = word_before_redir(str, i)))
 		{
 			err = detect_redir_in(str + i, save_fd);
