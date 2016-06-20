@@ -6,7 +6,7 @@
 /*   By: rle-mino <rle-mino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/04 12:02:03 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/06/02 21:02:49 by ishafie          ###   ########.fr       */
+/*   Updated: 2016/06/20 13:57:50 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,5 @@ t_line		*get_orig_line(t_line *line)
 {
 	while (line && line->is_orig == 0)
 		line = line->prev;
-	return (line->next);
+	return (line ? line->next : line);
 }

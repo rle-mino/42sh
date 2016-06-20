@@ -59,6 +59,7 @@ void	replace_var_quote(char **s, t_e **e)
 			i++;
 			while ((*s)[i] && (*s)[i] != 39)
 				i++;
+			i = (*s)[i] ? i : i - 1;
 		}
 		i++;
 	}
