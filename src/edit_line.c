@@ -6,7 +6,7 @@
 /*   By: rle-mino <rle-mino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/26 02:45:11 by rle-mino          #+#    #+#             */
-/*   Updated: 2016/06/09 13:56:48 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/06/20 14:01:10 by rle-mino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char			*to_string(t_line *line, int space)
 	t_line	*first;
 
 	max = linelen(line);
-	string = ft_memalloc(max);
+	string = ft_memalloc(max + 1);
 	cpy = line;
 	first = cpy;
 	i = 0;
