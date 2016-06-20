@@ -6,7 +6,7 @@
 /*   By: jaubard <jaubard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 10:59:54 by jaubard           #+#    #+#             */
-/*   Updated: 2016/06/20 11:15:16 by ishafie          ###   ########.fr       */
+/*   Updated: 2016/06/20 14:06:48 by ishafie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ t_e		*ft_exec_cmd(char *s, t_e *env, int i)
 	if ((ctrl = is_script(arg)) > 0)
 	{
 		ft_tabdel(arg);
-	 	arg = ft_backsplit(tmp, ';');
+		arg = ft_backsplit(tmp, ';');
 		free(tmp);
 		return (do_shell_script_and_follow(env, arg, ctrl));
 	}
