@@ -6,7 +6,7 @@
 /*   By: jaubard <jaubard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/10 15:27:45 by dsonetha          #+#    #+#             */
-/*   Updated: 2016/06/18 19:28:46 by ishafie          ###   ########.fr       */
+/*   Updated: 2016/06/20 14:24:47 by ishafie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_e		*call_builtins2(char *s, char **t, t_e *env, int i)
 		env->export = ft_export_temp(t, s, env->export, env);
 	else if (t && t[0] && ft_strequ("reset", t[0]))
 		reset_and_clear();
-	else if (t && (ft_strequ("clear", t[0]) || ft_strstr("/clear", t[0])))
+	else if (t && (ft_strequ("clear", t[0])))
 		ft_builtin_clear();
 	else if (t && t[0] && ft_strequ("exit", t[0]))
 	{
