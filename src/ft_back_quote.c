@@ -6,7 +6,7 @@
 /*   By: jaubard <jaubard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 13:04:37 by ishafie           #+#    #+#             */
-/*   Updated: 2016/06/20 11:14:38 by ishafie          ###   ########.fr       */
+/*   Updated: 2016/06/20 14:55:16 by ishafie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,7 @@ void			ft_back_quote(char *s, t_e *e)
 	cmd = adjust_to_back_quote(s, &cmdfirst, &cmdsecond);
 	pipe(fd);
 	if (fork() == 0)
-	{
-		dup2(fd[1], STDOUT_FILENO);
-		close(fd[0]);
-		ft_exec_cmd(cmd, e, -1);
-		cmd = NULL;
-		exit(1);
-	}
+		helper_back_quote(fd, e, cmd);
 	else
 	{
 		close(fd[1]);
@@ -112,15 +106,12 @@ char			*ft_replace_back_quote(char *s, t_e *e)
 	char		*cmdfirst;
 	char		*cmdsecond;
 
+	if (!check_back_quote(s))
+		return (NULL);
 	cmd = adjust_to_back_quote(s, &cmdfirst, &cmdsecond);
 	pipe(fd);
 	if (fork() == 0)
-	{
-		dup2(fd[1], STDOUT_FILENO);
-		close(fd[0]);
-		ft_exec_cmd(cmd, e, -1);
-		exit(1);
-	}
+		helper_back_quote(fd, e, cmd);
 	else
 	{
 		close(fd[1]);

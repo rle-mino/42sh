@@ -6,7 +6,7 @@
 #    By: jaubard <jaubard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/06/02 17:54:24 by jaubard           #+#    #+#              #
-#    Updated: 2016/06/20 13:36:25 by ishafie          ###   ########.fr        #
+#    Updated: 2016/06/20 14:45:49 by ishafie          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_NAME	=				auto_complete.c					\
 							auto_complete_display.c			\
 							buffer_parse.c					\
 							call_builtins.c					\
+							ft_back_quote_tools_2.c			\
 							clear_str.c						\
 							display_line.c					\
 							edit_line.c						\

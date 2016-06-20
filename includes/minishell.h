@@ -6,7 +6,7 @@
 /*   By: jaubard <jaubard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/02 17:54:02 by jaubard           #+#    #+#             */
-/*   Updated: 2016/06/20 10:31:43 by rle-mino         ###   ########.fr       */
+/*   Updated: 2016/06/20 14:53:39 by ishafie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ typedef struct		s_word
 	char			*word;
 	struct s_word	*next;
 }					t_word;
+
+int					check_back_quote(char *s);
+void				helper_back_quote(int fd[2], t_e *e, char *cmd);
 
 char				*delete_subshell(char *cmd, int begin);
 t_e					*ft_envdup(t_e *e);
